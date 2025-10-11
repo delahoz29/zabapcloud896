@@ -1,0 +1,22 @@
+CLASS zcl_lab_19_lion_896 DEFINITION
+INHERITING FROM zcl_lab_18_animal_896
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    METHODS walks REDEFINITION.
+
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_lab_19_lion_896 IMPLEMENTATION.
+  METHOD walks.
+    rv_action = 'The lion walks'.
+  ENDMETHOD.
+
+ENDCLASS.
