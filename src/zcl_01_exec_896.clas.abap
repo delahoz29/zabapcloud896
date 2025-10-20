@@ -14,22 +14,113 @@ ENDCLASS.
 CLASS zcl_01_exec_896 IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
 
-    DATA(lo_administr_dep_1) = NEW zcl_lab_48_admin_dep_896( 'Empleado 1' ).
-    DATA(lo_administr_dep_2) = NEW zcl_lab_48_admin_dep_896( 'Empleado 2' ).
-    DATA(lo_administr_dep_3) = NEW zcl_lab_48_admin_dep_896( 'Empleado 3' ).
+    DATA(lo_cut) = NEW zcl_lab_61_travel_896( ).
 
-    DATA(lo_employee) = NEW zcl_lab_49_employee_896( ).
+    lo_cut->get_travel( IMPORTING es_travel = DATA(ls_travel) ).
 
-    SET HANDLER lo_employee->on_payroll_paid FOR ALL INSTANCES.
+    out->write( |{ ls_travel-travel_id }-{ ls_travel-description }| ).
 
-    lo_administr_dep_1->notify_employee( ).
-    out->write( lo_employee->log ).
+*
+*cl_abap_unit_assert=>assert_equals(
+*act = perimetro
+*exp = 8 "<--- please adapt expected value
+*" msg = 'Testing value perimetro'
+** level =
+*).
+*    DATA(lo_business_pr) = NEW zcl_55_business_pr_896(  ).
+*
+*    lo_business_pr->get_factorial( EXPORTING iv_number = 4
+*                                   IMPORTING ev_factorial = DATA(lv_factorial) ).
+*    out->write( lv_factorial ).
+*    DATA: lo_date_analyzer TYPE REF TO zcl_lab_58_date_analyzer_896.
+*    lo_date_analyzer = NEW #( ).
+*    TRY.
+*        TRY.
+*            lo_date_analyzer->analyze_date( ).
+*          CATCH zcx_lab_56_no_date_896 INTO DATA(lx_no_date).
+*            out->write( 'No se detectó ninguna excepción de fecha.' ).
+*            out->write( 'Previous...' ).
+*            lo_date_analyzer->analyze_format( io_previous = lx_no_date ).
+*        ENDTRY.
+*      CATCH zcx_lab_57_format_unknown_896 INTO DATA(lx_format_unknown).
+*        out->write( 'Excepción desconocida detectada.' ).
+*        out->write( lx_format_unknown->get_text( ) ).
+*    ENDTRY.
 
-    lo_administr_dep_2->notify_employee( ).
-    out->write( lo_employee->log ).
+*    DATA: lo_bank      TYPE REF TO zcl_lab_54_bank_896,
+*          lx_excepcion TYPE REF TO cx_root.
+*    lo_bank = NEW #( ).
+*    out->write( 'Caso 1 - Cuenta no permitida.' ).
+*    TRY.
+*        lo_bank->transfer( iv_iban = 'IV90 2355 7889 8656' ).
+*        out->write( 'Operación realizada exitosamente.' ).
+*      CATCH BEFORE UNWIND zcx_lab_55_auth_iban_896 INTO lx_excepcion.
+*        IF lx_excepcion->is_resumable EQ abap_true.
+*          RESUME.
+*        ELSE.
+*          out->write( 'Operación no realizada' ).
+*        ENDIF.
+*    ENDTRY.
+*    out->write( 'Caso 2 - Cuenta permitida' ).
+*    TRY.
+*        lo_bank->transfer( iv_iban = 'CO58 8956 9632 4859' ).
+*        out->write( 'Operación completada con éxito.' ).
+*      CATCH BEFORE UNWIND zcx_lab_55_auth_iban_896 INTO lx_excepcion.
+*        IF lx_excepcion->is_resumable EQ abap_true.
+*          RESUME.
+*        ELSE.
+*          out->write( 'Operación no permitida.' ).
+*        ENDIF.
+*    ENDTRY.
 
-    lo_administr_dep_3->notify_employee( ).
-    out->write( lo_employee->log ).
+*    DATA: lv_n1 TYPE i VALUE 10,
+*          lv_n2 TYPE i.
+*
+*    TRY.
+*        TRY.
+*
+*            DATA(lv_result) = lv_n1 / lv_n2. " Division entre 0
+*            lv_result = lv_n1 / lv_n2.
+*            lv_result = lv_n1 - lv_n2.
+*          CATCH zcx_lab_52_operations_896 INTO DATA(lx_operations).
+*            out->write( lx_operations->get_text( ) ).
+*          CATCH cx_a4c_bc_exception.
+*          CLEANUP INTO DATA(lx_cleanup1).
+*            out->write( |Cleanup 1....Result: { lv_result }| ).
+*            out->write( lx_cleanup1->get_text( ) ).
+*        ENDTRY.
+*      CATCH cx_sy_zerodivide INTO DATA(lx_zerodivide).
+*        out->write( lx_zerodivide->get_text( ) ).
+*        lv_n2 = 4.
+*        RETRY.
+*      CLEANUP INTO DATA(lx_cleanup2).
+*        out->write( |Cleanup 2....| ).
+*        out->write( lx_cleanup2->get_text( ) ).
+*    ENDTRY.
+*    out->write( |FINISH: { lv_result }| ).
+*    DATA(lo_chek_user) = NEW zcl_lab_53_check_896( ).
+*    TRY.
+*        lo_chek_user->check_user( iv_user = sy-uname ).
+*      CATCH zcx_lab_52_operations_896 INTO DATA(lx_operations).
+*        out->write( lx_operations->get_text( ) ).
+*    ENDTRY.
+
+*    DATA(lo_administr_dep_1) = NEW zcl_lab_48_admin_dep_896( 'Empleado 1' ).
+*    DATA(lo_administr_dep_2) = NEW zcl_lab_48_admin_dep_896( 'Empleado 2' ).
+*    DATA(lo_administr_dep_3) = NEW zcl_lab_48_admin_dep_896( 'Empleado 3' ).
+*
+*    DATA(lo_employee) = NEW zcl_lab_49_employee_896( ).
+*
+*    SET HANDLER lo_employee->on_payroll_paid FOR ALL INSTANCES.
+*
+*    lo_administr_dep_1->notify_employee( ).
+*    out->write( lo_employee->log ).
+*
+*    lo_administr_dep_2->notify_employee( ).
+*    out->write( lo_employee->log ).
+*
+*    lo_administr_dep_3->notify_employee( ).
+*    out->write( lo_employee->log ).
 
 *    SET HANDLER zcl_lab_47_customer_service896=>on_new_call.
 *
