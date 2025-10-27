@@ -14,11 +14,58 @@ ENDCLASS.
 CLASS zcl_01_exec_896 IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
 
-    DATA(lo_cut) = NEW zcl_lab_61_travel_896( ).
+    DATA(lo_blog) = NEW zcl_lab_69_blog_896( ).
+    DATA(lo_administrator) = NEW zcl_lab_71_administrator_896( ).
+    DATA(lo_users) = NEW zcl_lab_72_users_896( ).
+* Setting handlers
+    SET HANDLER lo_administrator->on_nuevo_articulo FOR lo_blog.
+    SET HANDLER lo_users->on_nuevo_articulo FOR lo_blog.
+* New article
+    lo_blog->publicar_articulo( 'Evento de SAP los días 15, 16 y 17 de noviembre.' ).
 
-    lo_cut->get_travel( IMPORTING es_travel = DATA(ls_travel) ).
+    out->write( lo_blog->obtener_articulo( ) ).
+    out->write( lo_administrator->mv_notificacion ).
+    out->write( lo_users->mv_notificacion ).
 
-    out->write( |{ ls_travel-travel_id }-{ ls_travel-description }| ).
+*    DATA(go_tra_pa) = NEW zcl_lab_67_package_a_896( ).
+*    DATA(go_tra_pb) = NEW zcl_lab_68_package_b_896( ).
+*
+*    out->write( 'Vuelo paquete A' ).
+*    go_tra_pa->travel( out ).
+*
+*    out->write( 'Vuelo paquete B' ).
+*    go_tra_pb->travel( out ).
+
+*    DATA: go_file    TYPE REF TO zif_lab_06_file_896,
+*          go_factory TYPE REF TO zcl_lab_65_factory_896.
+*
+*    go_factory = NEW #( ).
+*
+*    go_file = go_factory->create_file( 'Work' ).
+*
+*    out->write( go_file->get_file_type( ) ).
+*
+*    go_file = go_factory->create_file( 'Supply' ).
+*
+*    out->write( go_file->get_file_type( ) ).
+
+*    DATA: go_s1 TYPE REF TO zcl_lab_62_context_896,
+*          go_s2 TYPE REF TO zcl_lab_62_context_896.
+*
+*    go_s1 = zcl_lab_62_context_896=>get_instancia( ).
+*
+*    WAIT UP TO 2 SECONDS.
+*
+*    go_s2 = zcl_lab_62_context_896=>get_instancia( ).
+*
+*    out->write( go_s1->mv_hora ).
+*    out->write( go_s2->mv_hora ).
+
+*    DATA(lo_cut) = NEW zcl_lab_61_travel_896( ).
+*
+*    lo_cut->get_travel( IMPORTING es_travel = DATA(ls_travel) ).
+*
+*    out->write( |{ ls_travel-travel_id }-{ ls_travel-description }| ).
 
 *
 *cl_abap_unit_assert=>assert_equals(

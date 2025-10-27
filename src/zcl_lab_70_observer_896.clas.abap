@@ -1,0 +1,17 @@
+CLASS zcl_lab_70_observer_896 DEFINITION ABSTRACT
+  PUBLIC
+*  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    METHODS on_nuevo_articulo ABSTRACT
+      FOR EVENT nuevo_articulo OF zcl_lab_69_blog_896
+      IMPORTING ev_titulo.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_lab_70_observer_896 IMPLEMENTATION.
+ENDCLASS.
