@@ -13,6 +13,11 @@ ENDCLASS.
 
 CLASS zcl_path_expression896 IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
+
+    data lt_abstract type table of ZI_CDS_20_896.
+
+
+
     SELECT FROM zi_cds_18_896 AS Booking
     FIELDS Booking~TravelId,
     Booking~BookingId,

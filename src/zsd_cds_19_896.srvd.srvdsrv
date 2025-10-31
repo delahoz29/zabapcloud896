@@ -1,0 +1,4 @@
+@EndUserText.label: 'SD - Custom Entity'
+define service Zsd_cds_19_896 {
+  expose ZI_CDS_19_896 as Travel;
+}
