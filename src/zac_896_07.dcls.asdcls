@@ -1,0 +1,6 @@
+@EndUserText.label: 'Priviledge Access'
+@MappingRole: true
+define role ZAC_896_07 {
+    grant select on ZI_CDS_38_896 where   false;
+                        
+}

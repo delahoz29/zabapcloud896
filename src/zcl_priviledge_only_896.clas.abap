@@ -1,0 +1,26 @@
+CLASS zcl_priviledge_only_896 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_priviledge_only_896 IMPLEMENTATION.
+  METHOD if_oo_adt_classrun~main.
+
+    SELECT FROM zi_cds_38_896 WITH PRIVILEGED ACCESS
+    FIELDS *
+    INTO TABLE @DATA(lt_results)
+    UP TO 50 ROWS.
+
+    out->write( lt_results ).
+
+  ENDMETHOD.
+
+ENDCLASS.
