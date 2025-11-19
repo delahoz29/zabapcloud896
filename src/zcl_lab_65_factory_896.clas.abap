@@ -12,7 +12,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_65_factory_896 IMPLEMENTATION.
+CLASS ZCL_LAB_65_FACTORY_896 IMPLEMENTATION.
+
+
   METHOD create_file.
     CASE iv_file_type.
       WHEN 'Work'.
@@ -21,5 +23,4 @@ CLASS zcl_lab_65_factory_896 IMPLEMENTATION.
         ro_file_type = NEW zcl_lab_64_supply_file_896( ).
     ENDCASE.
   ENDMETHOD.
-
 ENDCLASS.

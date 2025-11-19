@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_61_travel_896 IMPLEMENTATION.
+CLASS ZCL_LAB_61_TRAVEL_896 IMPLEMENTATION.
+
+
   METHOD get_travel.
 
     DATA: ls_travel    TYPE /dmo/travel,
@@ -36,5 +38,4 @@ CLASS zcl_lab_61_travel_896 IMPLEMENTATION.
       es_travel = CORRESPONDING #( ls_travel ).
     ENDIF.
   ENDMETHOD.
-
 ENDCLASS.

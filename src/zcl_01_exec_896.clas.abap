@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_01_exec_896 IMPLEMENTATION.
+CLASS ZCL_01_EXEC_896 IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
     DATA(lo_blog) = NEW zcl_lab_69_blog_896( ).
@@ -426,5 +428,4 @@ CLASS zcl_01_exec_896 IMPLEMENTATION.
 *    out->write( | Company_Code5: { lv_company_code5 } | ).
 *    out->write( | Currency5: { lv_currency5 } | ).
   ENDMETHOD.
-
 ENDCLASS.

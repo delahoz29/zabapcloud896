@@ -13,9 +13,10 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_59_calculator_896 IMPLEMENTATION.
+CLASS ZCL_LAB_59_CALCULATOR_896 IMPLEMENTATION.
+
+
   METHOD sum_up.
     ev_result = iv_n1 + iv_n2.
   ENDMETHOD.
-
 ENDCLASS.

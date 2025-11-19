@@ -11,9 +11,10 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_64_supply_file_896 IMPLEMENTATION.
+CLASS ZCL_LAB_64_SUPPLY_FILE_896 IMPLEMENTATION.
+
+
   METHOD zif_lab_06_file_896~get_file_type.
     rv_file_type = 'Supply File'.
   ENDMETHOD.
-
 ENDCLASS.

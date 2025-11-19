@@ -24,7 +24,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_66_travel_896 IMPLEMENTATION.
+CLASS ZCL_LAB_66_TRAVEL_896 IMPLEMENTATION.
+
 
   METHOD travel.
     me->transport_oneway( io_out ).
@@ -33,5 +34,4 @@ CLASS zcl_lab_66_travel_896 IMPLEMENTATION.
     me->day_three( io_out ).
     me->transport_return( io_out ).
   ENDMETHOD.
-
 ENDCLASS.

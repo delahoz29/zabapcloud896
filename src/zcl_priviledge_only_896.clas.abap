@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_priviledge_only_896 IMPLEMENTATION.
+CLASS ZCL_PRIVILEDGE_ONLY_896 IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
     SELECT FROM zi_cds_38_896 WITH PRIVILEGED ACCESS
@@ -22,5 +24,4 @@ CLASS zcl_priviledge_only_896 IMPLEMENTATION.
     out->write( lt_results ).
 
   ENDMETHOD.
-
 ENDCLASS.

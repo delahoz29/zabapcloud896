@@ -18,7 +18,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_60_test_calc_896 IMPLEMENTATION.
+CLASS ZCL_LAB_60_TEST_CALC_896 IMPLEMENTATION.
+
+
   METHOD sum_up_test.
     "Given
     DATA(lv_num_1) = 4.
@@ -33,12 +35,13 @@ CLASS zcl_lab_60_test_calc_896 IMPLEMENTATION.
     exp = 9 ).
   ENDMETHOD.
 
+
   METHOD setup.
     mo_cut = NEW #( ).
   ENDMETHOD.
 
+
   METHOD teardown.
     CLEAR mo_cut.
   ENDMETHOD.
-
 ENDCLASS.

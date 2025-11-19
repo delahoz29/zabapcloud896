@@ -12,9 +12,10 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_72_users_896 IMPLEMENTATION.
+CLASS ZCL_LAB_72_USERS_896 IMPLEMENTATION.
+
+
   METHOD on_nuevo_articulo.
     me->mv_notificacion = |Notificación de usuario. Chequea el nuevo articulo..... { ev_titulo }|.
   ENDMETHOD.
-
 ENDCLASS.

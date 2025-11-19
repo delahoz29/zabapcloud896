@@ -1,0 +1,12 @@
+@EndUserText.label: 'Host Expressions'
+@MappingRole: true
+define role ZAC_896_12 {
+    grant
+        select
+            on
+                zi_cds_44_896
+                    where ($parameters.pPlant) = aspect pfcg_auth( ZAOCARRID, ZAFCARRID, actvt = '03' ) 
+                    and $session.system_language = 'E'
+                    or ( '1000' ) = aspect pfcg_auth( ZAOCARRID, ZAFCARRID, actvt = '03' ) ;
+                        
+}

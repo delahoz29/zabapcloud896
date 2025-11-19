@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_path_expression896 IMPLEMENTATION.
+CLASS ZCL_PATH_EXPRESSION896 IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
     data lt_abstract type table of ZI_CDS_20_896.
@@ -34,5 +36,4 @@ CLASS zcl_path_expression896 IMPLEMENTATION.
     ENDIF.
 
   ENDMETHOD.
-
 ENDCLASS.

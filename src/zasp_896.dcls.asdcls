@@ -1,0 +1,11 @@
+define accesspolicy ZASP_896 {
+    @EndUserText.label: 'Aspect 896'
+    define aspect ZASP_896 as
+        select from ZI_CDS_41_896 with user element UserId
+            {
+                 Plant ,InvoiceId
+                
+               
+            }
+            
+}

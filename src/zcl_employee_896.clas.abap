@@ -13,7 +13,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_employee_896 IMPLEMENTATION.
+CLASS ZCL_EMPLOYEE_896 IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
     MODIFY zemployee_896 FROM TABLE @( VALUE #( ( employee = '100001'
                                                   manager = ''
@@ -32,5 +34,4 @@ CLASS zcl_employee_896 IMPLEMENTATION.
                                                   name = 'Name 5' )
                                                    ) ).
   ENDMETHOD.
-
 ENDCLASS.

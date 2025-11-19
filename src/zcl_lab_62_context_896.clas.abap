@@ -16,10 +16,13 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_62_context_896 IMPLEMENTATION.
+CLASS ZCL_LAB_62_CONTEXT_896 IMPLEMENTATION.
+
+
   METHOD constructor.
     me->mv_hora = cl_abap_context_info=>get_system_time( ).
   ENDMETHOD.
+
 
   METHOD get_instancia.
     IF mo_instancia IS NOT BOUND.
@@ -27,5 +30,4 @@ CLASS zcl_lab_62_context_896 IMPLEMENTATION.
     ENDIF.
     ro_instancia = mo_instancia.
   ENDMETHOD.
-
 ENDCLASS.

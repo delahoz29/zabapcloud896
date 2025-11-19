@@ -12,7 +12,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_71_administrator_896 IMPLEMENTATION.
+CLASS ZCL_LAB_71_ADMINISTRATOR_896 IMPLEMENTATION.
+
 
   METHOD on_nuevo_articulo.
     me->mv_notificacion = |Notificacion a administrador: Revisar ertpiculo.....{ ev_titulo }|.

@@ -1,0 +1,4 @@
+define view entity buffer on ZI_CDS_46_896
+  layer core
+  type full
+  

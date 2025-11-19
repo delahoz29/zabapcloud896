@@ -13,7 +13,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_query_prov_896 IMPLEMENTATION.
+CLASS ZCL_QUERY_PROV_896 IMPLEMENTATION.
+
+
   METHOD if_rap_query_provider~select.
 
     DATA: lt_results TYPE TABLE OF zi_cds_19_896.
@@ -41,5 +43,4 @@ CLASS zcl_query_prov_896 IMPLEMENTATION.
       CATCH cx_rap_query_response_set_twic INTO DATA(lx_exc).
     ENDTRY.
   ENDMETHOD.
-
 ENDCLASS.
