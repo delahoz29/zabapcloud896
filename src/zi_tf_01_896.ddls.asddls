@@ -1,9 +1,10 @@
 @EndUserText.label: 'Table Function'
+@ClientHandling.type: #CLIENT_DEPENDENT
 define table function ZI_tf_01_896
-  //with parameters parameter_name : parameter_type
+  with parameters pCountryCode : land1
 returns
 {
-  key client_element_name : abap.clnt;
+  key client : abap.clnt;
   key TraveId             : /dmo/travel_id;
   key booking_id          : /dmo/booking_id;
   key customer_id         : /dmo/customer_id;
@@ -18,4 +19,4 @@ returns
       currency_code       : /dmo/currency_code;
 }
 implemented by method
-  zcl_amdp_tf_896=>get_cust_bookings;
+  zcl_amdp_tf_896=>GET_CUST_BOOKINGS;
